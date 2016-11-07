@@ -1,7 +1,7 @@
 # angular-2-practices
 
 #### Requrements ####
-`node`>= `4.x.x`,
+`node`>= `4.x.x`</br>
 `npm` >= `3.x.x`,
 
 #### Steps####
