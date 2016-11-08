@@ -4,8 +4,8 @@
 `node`>= `4.x.x`</br>
 `npm` >= `3.x.x`</br>
 
-#### Steps####
-First run `npm install -g angular-cli` and then follow the following steps: </br>
+#### Steps ####
+First run `npm install -g angular-cli@latest` and then follow the following steps: </br>
 `1` Clone Repository </br>
 `2` Run `cd angular-2-practices`</br>
 `3` Run `npm install`</br>
