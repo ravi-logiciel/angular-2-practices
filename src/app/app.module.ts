@@ -10,6 +10,8 @@ import { HttpService } from './services/http.service';
 
 import { AppComponent } from './app.component';
 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -17,6 +19,7 @@ import { AppComponent } from './app.component';
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
+        FlashMessagesModule,
     ],
     declarations: [
         AppComponent,
