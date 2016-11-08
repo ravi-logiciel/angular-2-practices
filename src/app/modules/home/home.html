@@ -1,2 +1,6 @@
 <flash-messages></flash-messages>
 <h1>Welcome to Home</h1>
+
+<button class="btn btn-secondary" (click)="openPopupOne()">Open Popup One</button>
+
+<template ngbModalContainer #content let-c="close" let-d="dismiss"></template>
