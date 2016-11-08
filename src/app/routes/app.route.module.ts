@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+/* Components */
 import { AppComponent } from './../app.component';
 import { FormComponent } from './../modules/form/form.component';
 import { HomeComponent } from './../modules/home/home.component';
+import { PopupOneComponent } from './../popups/popup-one/popup-one.component';
+
+/* Third Party Packages */
+// Here
 
 /**
- * Routes
+ * App Routes
  */
 const routes: Routes = [
 	{
@@ -23,6 +28,15 @@ const routes: Routes = [
 		path: 'form',
 		pathMatch: 'full',
 		component: FormComponent
+	},
+
+	/**
+	 * Popup Routes
+	 */
+	{
+		path: 'p-1',
+		pathMatch: 'full',
+		component: PopupOneComponent
 	}
 ];
 
@@ -42,7 +56,7 @@ export class AppRouteModule { }
 /**
  * Route Components
  */
-export const RouteComponents = [
+export const AppRouteComponents = [
 	HomeComponent,
 	FormComponent,
 ];

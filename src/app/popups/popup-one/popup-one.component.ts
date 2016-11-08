@@ -7,13 +7,14 @@ import { HttpService } from './../../services/http.service';
 
 /* Third Party Packages */
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { NgbModal, ModalDismissReasons, NgbActiveModal } from './../../../../node_modules/@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal } from './../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 
 @Component({
-	templateUrl: './form.html',
+    selector: 'popup-one',
+	templateUrl: './popup-one.html',
 })
 
-export class FormComponent implements OnInit
+export class PopupOneComponent implements OnInit
 {
 
 	constructor(
@@ -28,8 +29,8 @@ export class FormComponent implements OnInit
      * Initial
      */
     ngOnInit() {
-    	console.log('Hello From Form Component');
-        this.showMessage('Hello From Form Component', 'alert-success');
+    	console.log('Hello From Popup One Component');
+        this.showMessage('Hello From Popup One Component', 'alert-success');
     }
 
     /**
@@ -40,9 +41,5 @@ export class FormComponent implements OnInit
             cssClass: css,
             timeout: 5000 
         });
-    }
-
-    close() {
-        
     }
 }
