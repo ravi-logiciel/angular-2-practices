@@ -5,10 +5,10 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from './../../services/http.service';
 
 @Component({
-  templateUrl: './form.html',
+  templateUrl: './home.html',
 })
 
-export class FormComponent implements OnInit
+export class HomeComponent implements OnInit
 {
 
 	constructor(
@@ -22,6 +22,6 @@ export class FormComponent implements OnInit
      * Initial
      */
     ngOnInit() {
-    	console.log('Hello From Form Component');
+    	console.log('Hello From Home Component');
     }
 }
