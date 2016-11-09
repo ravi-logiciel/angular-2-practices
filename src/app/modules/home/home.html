@@ -4,5 +4,18 @@
 <button class="btn btn-secondary" (click)="openPopup()">Open Popup with same Control</button>
 
 <button class="btn btn-secondary" (click)="openPopupOne()">Open Popup One with Another Component Control</button>
+<div *ngIf="data.email">
+	<h2>You Entered:</h2>
+	<div>Email : <b>{{ data?.email }}</b></div>
+	<div>Password : <b>{{ data?.password }}</b></div>
+	<div>
+		Birthday : 
+		<b>
+			{{ data?.dob?.year + '-' + data?.dob?.month + '-' + data?.dob?.day }}
+		</b>
+	</div>
+</div>
 
-Data = {{ data?.name }}
+<div *ngIf="!data.email">
+	<h4>You entered nothing.</h4>
+</div>

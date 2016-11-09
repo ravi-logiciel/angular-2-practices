@@ -1,0 +1,36 @@
+*{
+	padding: 0px;
+	margin: 0px; 
+}
+
+a,
+a:hover,
+a:active,
+a:focus{
+	cursor: pointer;
+}
+
+.error{
+	color: red;
+	text-align: left;
+}
+
+.popup-wrap{
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+ngb-datepicker{
+	width: 200px;
+}
+
+ngb-datepicker table {
+	width: 100%;
+	text-align: center;
+}
+
+ngb-datepicker-navigation-select select {
+	padding: 4px 1px !important;
+    font-size: 15px !important;
+}
