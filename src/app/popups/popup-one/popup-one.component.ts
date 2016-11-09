@@ -94,7 +94,7 @@ export class PopupOneComponent implements OnInit
      * Close Popup
      */
     closePopup() {
-        // this._modal.data = this.data;
+        this._modal.data = this.data;
         this._activeModal.close();
     }
 
@@ -103,7 +103,6 @@ export class PopupOneComponent implements OnInit
      */
     submit() {
         this._modal.data = this.data;
-        console.log(this);
         this._activeModal.close();
     }
 
@@ -117,7 +116,7 @@ export class PopupOneComponent implements OnInit
         this.form = new FormGroup({
             email: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required),
-            dob: new FormControl('', Validators.required),
+            dob: new FormControl({value: '', disabled: true}, Validators.required),
         });
     }
 
