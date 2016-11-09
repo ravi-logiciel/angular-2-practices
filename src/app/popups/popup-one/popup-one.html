@@ -1,7 +1,14 @@
-<flash-messages></flash-messages>
+<div>
+	<flash-messages></flash-messages>
 
-<h1>Welcome to PopUp One</h1>
+	<h1>Welcome to Popup One</h1>
 
-<div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="_activeModal.close('Close click')">Close</button>
+	<div class="modal-footer">
+		<button type="button" 
+			class="btn btn-secondary" 
+			(click)="closePopup()">
+
+			Close
+		</button>
+	</div>
 </div>

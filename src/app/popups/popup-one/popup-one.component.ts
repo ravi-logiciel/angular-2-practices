@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 /* Services */
 import { HttpService } from './../../services/http.service';
+import { ModalService } from './../../services/modal.service';
 
 /* Third Party Packages */
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -23,13 +24,20 @@ export class PopupOneComponent implements OnInit
 		private _httpSerivce: HttpService,
 		private _flashMessagesService: FlashMessagesService,
         private _activeModal: NgbActiveModal,
+        private _modal: ModalService,
 	) {};
+
+    /**
+     * Define Variables
+     */
+    public data = {
+        name : 'Ravi Heer',
+    }
 
 	/**
      * Initial
      */
     ngOnInit() {
-    	console.log('Hello From Popup One Component');
         this.showMessage('Hello From Popup One Component', 'alert-success');
     }
 
@@ -41,5 +49,13 @@ export class PopupOneComponent implements OnInit
             cssClass: css,
             timeout: 5000 
         });
+    }
+
+    /**
+     * Close Popup
+     */
+    closePopup() {
+        this._modal.data = this.data;
+        this._activeModal.close();
     }
 }

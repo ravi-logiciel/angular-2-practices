@@ -19,6 +19,8 @@ import { NgbModal, ModalDismissReasons, NgbActiveModal } from './../../../../nod
 
 export class HomeComponent implements OnInit
 {
+    public data = {};
+
 	constructor(
         private _router: Router,
         private _formBuilder: FormBuilder,
@@ -32,8 +34,7 @@ export class HomeComponent implements OnInit
      * Initial
      */
     ngOnInit() {
-    	console.log('Hello From Home Component');
-        this.showMessage('Hello From Home Component', 'alert-success');
+    	this.showMessage('Hello From Home Component', 'alert-success');
     }
 
     /**
@@ -46,7 +47,29 @@ export class HomeComponent implements OnInit
         });
     }
 
+    /**
+     * Open Popup One
+     */
     openPopupOne() {
-        this._modal.open(PopupOneComponent);
+        
+        this._modal.open(PopupOneComponent)
+        .then(
+            (res) => {
+                this.data = res;
+                console.log('res', res);
+                
+            }, (err) => {
+               console.log('err', err);
+            }
+        );
+
+    }
+
+    /**
+     * Open Popup
+     */
+    openPopup() {
+        console.log('this', this);
+        this._modal.open('Title');
     }
 }

@@ -5,10 +5,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 //Here
 
 /* Third Party Packages */
-import { NgbModal, ModalDismissReasons, NgbActiveModal } from '../../../node_modules/@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons, NgbModalOptions } from '../../../node_modules/@ng-bootstrap/ng-bootstrap';
 
 @Component({
-    template: '<h1>Hello</h1>',
+    template: '',
 })
 
 export class ModalService
@@ -23,32 +23,34 @@ export class ModalService
      */
     closeResult: string;
 
+    public data = {};
+
+    /*****/
+
+    /**
+     * Setup Modal Options
+     */
+    modalOptions: NgbModalOptions = {
+        backdrop: true,
+        keyboard: false,
+        size: 'lg',
+        // windowClass:'container',
+    };
+
     /**
      * Open Modal
      */
     open(content: {}) {
-    	console.log('Hello From Modal Service', this._modal);
-        this._modal.open(content).result.then((result) => {
-            this.closeResult = `Closed with: ${result}`;
-            console.log(this.closeResult);
-        }, (reason) => {
-            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-            console.log(this.closeResult);
-        });
-    }
 
-    /** Privare Functions **/
-    
-    /**
-     * Get Modal Closed Reason
-     */
-    private getDismissReason(reason: any): string {
-        if (reason === ModalDismissReasons.ESC) {
-            return 'by pressing ESC';
-        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-            return 'by clicking on a backdrop';
-        } else {
-            return  `with: ${reason}`;
-        }
+        this.data = {};
+
+        return this._modal.open(content, this.modalOptions)
+        .result.then(
+            (result) => {
+                return this.data;
+            }, (reason) => {
+                return this.data;                    
+            }
+        );
     }
 }
